@@ -2,6 +2,7 @@ package com.marcus.oa.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.marcus.oa.pojo.MenuRole;
+import io.lettuce.core.dynamic.annotation.Param;
 
 /**
  * <p>
@@ -13,4 +14,12 @@ import com.marcus.oa.pojo.MenuRole;
  */
 public interface MenuRoleMapper extends BaseMapper<MenuRole> {
 
+
+    /**
+     * 更新角色菜单
+     * @param rid
+     * @param mids
+     * @return
+     */
+    Integer insertRecord(@Param("rid") Integer rid, @Param("mids") Integer[] mids);
 }
